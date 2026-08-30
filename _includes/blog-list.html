@@ -1,0 +1,54 @@
+{%- comment -%}
+  Blog posts split in two:
+    * published  — normal posts, rendered with links
+    * upcoming   — front matter `upcoming: true`, or an entry in
+                   _data/upcoming_posts.yml; rendered as placeholders, no link
+  Optional include params: title (published heading), upcoming_title.
+{%- endcomment -%}
+{%- assign published_posts = site.posts | where_exp: "post", "post.upcoming != true" -%}
+{%- assign upcoming_posts = site.posts | where_exp: "post", "post.upcoming == true" -%}
+{%- assign data_upcoming = site.data.upcoming_posts -%}
+
+{%- if published_posts.size > 0 -%}
+<h2 class="post-list-heading">{{ include.title | default: "Blog" }}</h2>
+<ul class="post-list">
+  {%- for post in published_posts -%}
+  <li>
+    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+    <span class="post-meta">{{ post.date | date: date_format }}</span>
+    <h3>
+      <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    </h3>
+    {%- if post.summary -%}
+      <p class="post-summary">{{ post.summary | escape }}</p>
+    {%- elsif site.show_excerpts -%}
+      {{ post.excerpt }}
+    {%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}
+
+{%- if upcoming_posts.size > 0 or data_upcoming.size > 0 -%}
+<h2 class="post-list-heading">{{ include.upcoming_title | default: "Upcoming" }}</h2>
+<ul class="upcoming-list">
+  {%- for post in upcoming_posts -%}
+  <li>
+    <span class="upcoming-title">{{ post.title | escape }}</span>
+    <span class="upcoming-badge">Coming soon</span>
+    {%- if post.summary -%}<div class="post-meta">{{ post.summary | escape }}</div>{%- endif -%}
+  </li>
+  {%- endfor -%}
+  {%- for item in data_upcoming -%}
+  <li>
+    <span class="upcoming-title">{{ item.title | escape }}</span>
+    <span class="upcoming-badge">{{ item.note | default: "Coming soon" }}</span>
+    {%- if item.summary -%}<div class="post-meta">{{ item.summary | escape }}</div>{%- endif -%}
+  </li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}
+
+{%- if site.posts.size > 0 -%}
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}

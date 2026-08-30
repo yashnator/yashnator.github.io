@@ -1,0 +1,13 @@
+# Placeholder blog posts that don't have a file yet.
+# These render under the "Upcoming" heading on the landing page with no link.
+#
+# Fields per entry:
+#   title    (required) the planned post title
+#   note     (optional) badge text, defaults to "Coming soon"
+#   summary  (optional) one-line teaser
+#
+# Alternatively, add `upcoming: true` to the front matter of a real post
+# in _posts/ and it will show up here instead of in the published list.
+
+# - title: "A future post I'm planning"
+#   summary: "A sentence about what it will cover."

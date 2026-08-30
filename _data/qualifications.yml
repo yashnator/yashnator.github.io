@@ -1,0 +1,22 @@
+# Education and other qualifications shown on the landing page.
+# Every field except the two top-level keys (education, achievements) is optional.
+#
+# TODO: correct the degree name, dates and note below.
+
+education:
+  - credential: "Dual degree in physics + cse"
+    org: "Indian Institute of Technology Delhi"
+    url: "https://home.iitd.ac.in/"
+    period: "2020 - 2025"
+    location: "New Delhi, India"
+    note: "And minor in CSE for unkown reasons"
+
+# Fellowships, programs, awards, certifications — anything worth calling out.
+# Fields: text (required), url (optional).
+achievements:
+  - text: "Completed grade 8 in Piano from Trinity college - upcoming ATCL!"
+  - text: "Google Summer of Code 2024 & 2023 with CERN-HSF"
+    url: "https://summerofcode.withgoogle.com/"
+  - text: "99.98%ile in JEE (Main), 2021"
+  - text: "Merit award for Indian National Mathematics Olympiad & Indian National Physics Olympiad"
+  - text: "National Standard Examination for Astronomy - National Top 1%"

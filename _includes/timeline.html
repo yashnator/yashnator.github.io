@@ -1,0 +1,32 @@
+{%- if site.data.timeline and site.data.timeline.size > 0 -%}
+<section class="timeline-section">
+  <h2 class="timeline-heading">{{ include.title | default: "Experience" }}</h2>
+  <ol class="timeline">
+    {%- for job in site.data.timeline -%}
+    <li class="timeline-item">
+      <span class="timeline-marker" aria-hidden="true"></span>
+      <div class="timeline-content">
+        {%- if job.period -%}<span class="timeline-period">{{ job.period }}</span>{%- endif -%}
+        <h3 class="timeline-role">
+          {{ job.role }}
+          {%- if job.org -%}
+            <span class="timeline-org">·
+              {%- if job.url %} <a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.org }}</a>
+              {%- else %} {{ job.org }}
+              {%- endif -%}
+            </span>
+          {%- endif -%}
+        </h3>
+        {%- if job.location -%}<p class="timeline-location">{{ job.location }}</p>{%- endif -%}
+        {%- if job.summary -%}<p class="timeline-summary">{{ job.summary }}</p>{%- endif -%}
+        {%- if job.points and job.points.size > 0 -%}
+        <ul class="timeline-points">
+          {%- for point in job.points -%}<li>{{ point }}</li>{%- endfor -%}
+        </ul>
+        {%- endif -%}
+      </div>
+    </li>
+    {%- endfor -%}
+  </ol>
+</section>
+{%- endif -%}

@@ -1,0 +1,44 @@
+# Job / work experience timeline shown on the landing page.
+#
+# List roles newest-first — the first entry renders at the top.
+# Fields per entry:
+#   role     (required) job title
+#   org      (optional) company / organization
+#   url      (optional) link for the company name, e.g. "https://example.com"
+#   period   (optional) e.g. "Jun 2025 - Present"
+#   location (optional) e.g. "Bengaluru, India" or "Remote"
+#   summary  (optional) one-line description
+#   points   (optional) list of bullet points
+#
+# Replace the placeholders below with your real experience.
+
+- role: "Systems software engineer"
+  org: "Canonical"
+  url: "https://canonical.com/"
+  period: "Aug 2026 - Present"
+  location: "Remote"
+  summary: "Works on Mir and Flutter. Writes open source software full time!"
+  points:
+    # - "Works on Wayland based display server - Mir"
+    - "Keywords: Linux, Wayland, display servers, C++, Rust, Python"
+
+- role: "Member of Technical Staff"
+  org: "RISA Labs AI"
+  url: "https://www.risalabs.ai/"
+  period: "Jan 2026 - Aug 2026"
+  location: "Palo Alto, CA / Bengaluru, KA / Remote"
+  summary: "AI systems, backend, infra and healthcare"
+  points:
+    - "Integrated ModMed and OncoEMR FHIR APIs to streamline medical workflows"
+    - "Optimised data pipelines and built microservices for automated RPA agents"
+    - "Keywords: Python, kubernetes, AI infrastructure, Healthcare"
+
+- role: "Software Engineering Intern"
+  org: "Atlassian"
+  url: "https://www.atlassian.com/"
+  period: "May 2024 - July 2024"
+  location: "Bengaluru, KA / Remote"
+  # summary: "Data lakes, DevOps, Big Data"
+  points:
+    # - "Integrated ModMed and OncoEMR FHIR APIs to make medical workflows streamlined"
+    - "Keywords: Python, Scala, Data lake, Data warehousing, Infrastructure"

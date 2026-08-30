@@ -1,0 +1,45 @@
+{%- comment -%}
+  Renders _data/qualifications.yml — `education` list and `achievements` list.
+  Optional include param: title.
+{%- endcomment -%}
+{%- assign quals = site.data.qualifications -%}
+{%- if quals -%}
+<section class="qual-section">
+  <h2 class="qual-heading">{{ include.title | default: "Education &amp; qualifications" }}</h2>
+
+  {%- if quals.education and quals.education.size > 0 -%}
+  <ul class="qual-list">
+    {%- for item in quals.education -%}
+    <li class="qual-item">
+      {%- if item.period -%}<span class="qual-period">{{ item.period }}</span>{%- endif -%}
+      <span class="qual-body">
+        <span class="qual-credential">{{ item.credential }}</span>
+        {%- if item.org -%}
+        <span class="qual-org">·
+          {%- if item.url %} <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.org }}</a>
+          {%- else %} {{ item.org }}
+          {%- endif -%}
+        </span>
+        {%- endif -%}
+        {%- if item.location -%}<span class="qual-location">{{ item.location }}</span>{%- endif -%}
+        {%- if item.note -%}<span class="qual-note">{{ item.note }}</span>{%- endif -%}
+      </span>
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+
+  {%- if quals.achievements and quals.achievements.size > 0 -%}
+  <h3 class="qual-subheading">Programs &amp; achievements</h3>
+  <ul class="qual-achievements">
+    {%- for item in quals.achievements -%}
+    <li>
+      {%- if item.url -%}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.text }}</a>
+      {%- else -%}{{ item.text }}
+      {%- endif -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  {%- endif -%}
+</section>
+{%- endif -%}

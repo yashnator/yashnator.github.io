@@ -1,0 +1,164 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+/* ---- Experience timeline ---- */
+.timeline-section {
+  margin: $spacing-unit 0;
+}
+
+.timeline {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  border-left: 2px solid $grey-color-light;
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: $spacing-unit;
+  margin-bottom: $spacing-unit;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -7px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  background-color: $brand-color;
+  border-radius: 50%;
+}
+
+.timeline-period {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.timeline-role {
+  margin: 2px 0 4px;
+}
+
+.timeline-org {
+  font-weight: 400;
+  color: $grey-color-dark;
+}
+
+.timeline-location,
+.timeline-summary {
+  margin: 0 0 4px;
+}
+
+.timeline-location {
+  font-size: $small-font-size;
+  color: $grey-color;
+}
+
+.timeline-points {
+  margin-bottom: 0;
+}
+
+/* ---- Education & qualifications ---- */
+.qual-section {
+  margin: $spacing-unit 0;
+}
+
+.qual-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+.qual-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: $spacing-unit * 0.5;
+}
+
+.qual-period {
+  flex: 0 0 8em;
+  font-size: $small-font-size;
+  color: $grey-color;
+  padding-top: 1px;
+}
+
+.qual-body {
+  flex: 1 1 16em;
+}
+
+.qual-credential {
+  font-weight: 600;
+}
+
+.qual-org {
+  font-weight: 400;
+}
+
+.qual-location {
+  font-size: $small-font-size;
+  color: $grey-color;
+
+  &::before {
+    content: " · ";
+  }
+}
+
+.qual-note {
+  display: block;
+  font-size: $small-font-size;
+  color: $grey-color-dark;
+}
+
+.qual-subheading {
+  margin-top: $spacing-unit * 0.5;
+  font-size: $base-font-size * 1.125;
+}
+
+.qual-achievements {
+  margin-left: $spacing-unit;
+}
+
+/* ---- Upcoming posts ---- */
+.upcoming-list {
+  list-style: none;
+  margin-left: 0;
+
+  > li {
+    margin-bottom: $spacing-unit * 0.5;
+  }
+}
+
+.upcoming-title {
+  color: $grey-color-dark;
+}
+
+.upcoming-badge {
+  display: inline-block;
+  font-size: $small-font-size;
+  color: $grey-color;
+  border: 1px solid $grey-color-light;
+  border-radius: 3px;
+  padding: 0 6px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+/* ---- Blog list ---- */
+.post-summary {
+  margin: 2px 0 0;
+  color: $grey-color-dark;
+}
+
+/* ---- Personal-blog disclaimer ---- */
+.disclaimer {
+  margin-top: $spacing-unit;
+  padding-top: $spacing-unit * 0.5;
+  border-top: 1px solid $grey-color-light;
+  font-size: $small-font-size;
+  color: $grey-color;
+}
