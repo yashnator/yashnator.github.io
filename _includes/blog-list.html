@@ -29,24 +29,36 @@
 </ul>
 {%- endif -%}
 
-{%- if upcoming_posts.size > 0 or data_upcoming.size > 0 -%}
+{%- assign upcoming_limit = include.upcoming_limit | default: 3 -%}
+{%- assign upcoming_count = upcoming_posts.size | plus: data_upcoming.size -%}
+{%- if upcoming_count > 0 -%}
 <h2 class="post-list-heading">{{ include.upcoming_title | default: "Upcoming" }}</h2>
 <ul class="upcoming-list">
+  {%- assign shown = 0 -%}
   {%- for post in upcoming_posts -%}
+    {%- if shown < upcoming_limit -%}
   <li>
     <span class="upcoming-title">{{ post.title | escape }}</span>
     <span class="upcoming-badge">Coming soon</span>
     {%- if post.summary -%}<div class="post-meta">{{ post.summary | escape }}</div>{%- endif -%}
   </li>
+      {%- assign shown = shown | plus: 1 -%}
+    {%- endif -%}
   {%- endfor -%}
   {%- for item in data_upcoming -%}
+    {%- if shown < upcoming_limit -%}
   <li>
     <span class="upcoming-title">{{ item.title | escape }}</span>
     <span class="upcoming-badge">{{ item.note | default: "Coming soon" }}</span>
     {%- if item.summary -%}<div class="post-meta">{{ item.summary | escape }}</div>{%- endif -%}
   </li>
+      {%- assign shown = shown | plus: 1 -%}
+    {%- endif -%}
   {%- endfor -%}
 </ul>
+{%- if upcoming_count > upcoming_limit -%}
+<p class="upcoming-more">…and {{ upcoming_count | minus: upcoming_limit }} more in the works.</p>
+{%- endif -%}
 {%- endif -%}
 
 {%- if site.posts.size > 0 -%}

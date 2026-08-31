@@ -1,13 +1,11 @@
 # Education and other qualifications shown on the landing page.
 # Every field except the two top-level keys (education, achievements) is optional.
-#
-# TODO: correct the degree name, dates and note below.
 
 education:
-  - credential: "Dual degree in physics + cse"
+  - credential: "Dual degree, physics + cse"
     org: "Indian Institute of Technology Delhi"
     url: "https://home.iitd.ac.in/"
-    period: "2020 - 2025"
+    period: "2021 - 2026"
     location: "New Delhi, India"
     note: "And minor in CSE for unkown reasons"
 

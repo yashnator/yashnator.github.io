@@ -9,7 +9,7 @@ Before that I studied CS and physics at IIT Delhi. I like math, physics, music a
 
 ## A few things about me
 
-- **What I care about:** open source software (new here? [What is OSS?](https://opensource.com/resources/what-open-source)), [free software](https://www.fsf.org/about/what-is-free-software), secure systems, and Linux.
+- **What I care about:** open source software ([What is OSS?](https://opensource.com/resources/what-open-source)), [free software](https://www.fsf.org/about/what-is-free-software), secure systems, and Linux.
 - **My weaknesses:** shelling out lots of money on coffee & watching too many cat videos.
 - **Where I see myself in 5 years:** shelling out lots of money on coffee & watching too many cat videos.
 
@@ -17,12 +17,12 @@ Before that I studied CS and physics at IIT Delhi. I like math, physics, music a
 
 {% include qualifications.html %}
 
+{% include blog-list.html %}
+
 ## Where to catch me
 
 - Canonical sprints - Mexico, Oct 2026
-- UbuCon Asia - Bengaluru, Nov 2026
+- UbuCon - Bengaluru, Nov 2026
 - UbuCon Europe - TBD, 2027
-
-{% include blog-list.html %}
 
 <p class="disclaimer">This is my personal blog. The views, tutorials, and opinions expressed here are entirely my own and do not represent any of my employers.</p>
